@@ -129,7 +129,7 @@ void Samd51Platform::restart()
         }
 
         _udp.read(buffer, len);
-        printHex("-> ", buffer, len);
+        //printHex("-> ", buffer, len);
         return len;
     }
 
@@ -155,17 +155,6 @@ static const uint32_t pageSizes[] = {8, 16, 32, 64, 128, 256, 512, 1024};
 
 void Samd51Platform::init()
 {
-    // println("Entered Init .h variables active, rest and .cpp commented");
-
-    // #if USE_W5X00 == 1
-    //     IPAddress _ip = Ethernet.localIP();
-    //     _ipAddress = htonl(_ip);
-    //     _ip = Ethernet.subnetMask();
-    //     _netmask = htonl(_ip);
-    //     _ip = Ethernet.gatewayIP();
-    //     _defaultGateway = htonl(_ip);
-    // #endif
-
     _memoryType = Flash;
     _pageSize = pageSizes[NVMCTRL->PARAM.bit.PSZ];
     _pageCnt = NVMCTRL->PARAM.bit.NVMP;

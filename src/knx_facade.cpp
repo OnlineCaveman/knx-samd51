@@ -37,7 +37,7 @@
     #endif
 
     #ifdef __SAMD51__
-        // predefined global instance for TP or RF
+        // predefined global instance for TP, RF or IP
         #if MASK_VERSION == 0x07B0
             KnxFacade<Samd51Platform, Bau07B0> knx(buttonEvent);
         #elif MASK_VERSION == 0x27B0
