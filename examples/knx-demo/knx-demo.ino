@@ -126,7 +126,6 @@ void setup()
 
 void loop()
 {
-#ifdef USE_KNX
     // don't delay here to much. Otherwise you might lose packages or mess up the timing with ETS
     knx.loop();
 
@@ -134,7 +133,5 @@ void loop()
     if (!knx.configured())
         return;
 
-    // measureTemp();
-#endif
-
+    measureTemp();
 }
